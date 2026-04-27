@@ -6,12 +6,16 @@
 
 Helix-rs is a high-performance, locally executed Terminal User Interface (TUI) built in Rust for bioinformatics and genomic analysis. It is engineered to process massive multi-FASTA files and full bacterial genomes (such as *E. coli* K-12) entirely on local hardware, bypassing the need for cloud infrastructure or external APIs.
 
+---
+
 ## Why Use Helix-rs?
 
 * **Data Privacy & Security:** By executing entirely on your local machine, sensitive genomic data never leaves your hard drive.
 * **Extreme Performance:** Utilizing Rust's memory safety and zero-cost abstractions, combined with sliding-window `O(n)` algorithms, the engine processes millions of base pairs in seconds.
 * **Non-Blocking Architecture:** Built on the `tokio` asynchronous runtime, the interface remains highly responsive and provides granular progress reporting even during heavy computational workloads.
 * **Comprehensive Profiling:** Natively calculates exact GC content, identifies Open Reading Frames (ORFs) across all six reading frames, and performs in-memory DNA-to-Protein translation.
+
+---
 
 ## Prerequisites
 
@@ -22,17 +26,18 @@ Before downloading and installing Helix-rs, ensure your system meets the followi
 2. **Python 3 (Optional):** Required only if you intend to use the included data visualization script.
    * Required Python libraries: `pip install pandas matplotlib seaborn`
 
+---
+
 ## Download and Installation
 
 Follow these steps to download the source code and compile the optimized binary on your machine.
 
-1. **Clone the Repository:**
-   ```bash
-   git clone [https://github.com/ekantkannam/helix-rs.git](https://github.com/ekantkannam/helix-rs.git)
-   cd helix-rs
+**1. Clone the Repository:**
+```bash
+git clone [https://github.com/ekantkannam/helix-rs.git](https://github.com/ekantkannam/helix-rs.git)
+cd helix-rs
 
-
-   Compile the Application:
+Compile the Application:
 Note: You must compile using the release flag. Compiling in debug mode is not recommended for analyzing full bacterial genomes due to performance limitations.
 
 Bash
@@ -50,19 +55,19 @@ Operation Controls
 
 Once the TUI has initialized, use the following commands to navigate and control the analysis:
 
-1 or l : Load Sequence Opens the file input dialogue. Provide the absolute system path to your .fasta or .fna file (e.g., /Users/username/e_coli.fasta) and press Enter.
+1 or l : Load Sequence - Opens the file input dialogue. Provide the absolute system path to your .fasta or .fna file (e.g., /Users/username/e_coli.fasta) and press Enter.
 
-r : Run Analysis Executes the genomic profiling engine on the currently selected sequence. The UI will display real-time progress.
+r : Run Analysis - Executes the genomic profiling engine on the currently selected sequence. The UI will display real-time progress.
 
-t : Translate Toggles the DNA-to-Protein translation view for the identified sequences.
+t : Translate - Toggles the DNA-to-Protein translation view for the identified sequences.
 
-e : Export Data Writes the computed analysis metrics (Length, GC Content, ORF Count) to a local helix_export.tsv file in the project directory.
+e : Export Data - Writes the computed analysis metrics (Length, GC Content, ORF Count) to a local helix_export.tsv file in the project directory.
 
-d : Load Demos Automatically loads included demonstration sequences (e.g., HIV-1, Ebola VP40) for software testing.
+d : Load Demos - Automatically loads included demonstration sequences (e.g., HIV-1, Ebola VP40) for software testing.
 
-UP / DOWN Arrows : Navigate Moves the selection cursor between different sequences if a multi-FASTA file is loaded.
+UP / DOWN Arrows : Navigate - Moves the selection cursor between different sequences if a multi-FASTA file is loaded.
 
-q : Quit Safely terminates the application and returns to the standard terminal prompt.
+q : Quit - Safely terminates the application and returns to the standard terminal prompt.
 
 Data Visualization
 Helix-rs includes a companion Python script to generate scientific visualizations from your exported data.
