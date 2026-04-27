@@ -1,0 +1,12 @@
+# Rust compilation artifacts
+/target/
+Cargo.lock
+
+# Data files (Don't push massive genomes to Git!)
+*.fasta
+*.fna
+*.fa
+helix_export.tsv
+
+# OS generated files
+.DS_Store
